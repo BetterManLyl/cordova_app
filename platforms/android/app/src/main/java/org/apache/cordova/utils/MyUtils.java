@@ -40,6 +40,12 @@ public class MyUtils extends CordovaPlugin {
             callbackContext.success(args.getString(0));
             return true;
         }
+        if (action.equals("readIDCard")) {
+                    //这里可以实现一些你的原生逻辑功能
+                    Toast.makeText(cordova.getActivity(), args.getString(0) + "readIDCard", Toast.LENGTH_SHORT).show();
+                    callbackContext.success(args.getString(0));
+                    return true;
+                }
         return false;
     }
 }

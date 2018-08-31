@@ -27,7 +27,7 @@
     <feature name="myToast">
         <param name="android-package" value="org.apache.cordova.toast.MyToast" />
     </feature>
-    <feature name="android">
+    <feature name="window.android">
         <param name="android-package" value="org.apache.cordova.utils.MyUtils" />
     </feature>
     <feature name="Battery">

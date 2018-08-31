@@ -38,25 +38,38 @@ var app = {
             this.netinfo();
 
             this.deviceinfo();
-            window.myToast.showToast("测试");
-            window.android.showToast("cehsi");
-
-            window.android.showToast2(success,error,"cehsi");
-
+            this.testClick();
+            // window.myToast.showToast("测试");
+            // window.android.showToast("cehsi");
+            //
+            // window.android.showToast2(success,error,"cehsi");
+            //
+            // window.android.readIDCard(success,error,"readIDCard")
             function success(message) {
                 alert(message);
             }
-            
+
             function error() {
-                
+
             }
 
+
         },
+
+        testClick:function () {
+            var testClick = this.$$("next_page");
+            testClick.onclick=function () {
+               // alert("next_page")
+                window.location.href="utils_page.html"
+            }
+        },
+
 
         deviceinfo: function () {
             var deviceinfo = this.$$("deviceinfo");
             deviceinfo.onclick = function () {
                 window.MacAddress.getMacAddress(onSuccess, onFail);
+
                 function onSuccess(macAddress) {
                     alert("Cordova version: " + device.cordova + "\n" +
                         "Device model: " + device.model + "\n" +
@@ -293,8 +306,9 @@ var app = {
     }
 ;
 
-function testClick() {
-    console("测试");
+
+
+function utils_page() {
     alert("ceshi")
 }
 

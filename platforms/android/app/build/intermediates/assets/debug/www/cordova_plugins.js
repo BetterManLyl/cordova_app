@@ -45,7 +45,7 @@ module.exports = [
     "file": "plugins/util-plugin/www/util-plugin.js",
     "pluginId": "util-plugin",
     "clobbers": [
-      "android"
+      "window.android"
     ]
   },
   {

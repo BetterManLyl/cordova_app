@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="3.0.0"
-    timestamp="1535633819935"
+    timestamp="1535644488680"
     token="4763609144182095865"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -22,6 +22,10 @@
     <task
         name="verifier"
         duration="0" />
+
+    <artifact
+        location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
@@ -67,7 +71,7 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1535632028059"
+        timestamp="1535641052657"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
@@ -75,15 +79,11 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1535633450864"
+        timestamp="1535644488680"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
-    <build
-        build-mode="COLD"
-        timestamp="1535633819935"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
