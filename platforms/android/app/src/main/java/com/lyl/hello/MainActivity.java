@@ -19,14 +19,26 @@
 
 package com.lyl.hello;
 
+import android.content.Intent;
 import android.os.Bundle;
-import org.apache.cordova.*;
+import android.util.Log;
 
-public class MainActivity extends CordovaActivity
-{
+import com.lyl.hello.callback.TakePhotoCallBack;
+
+import org.apache.cordova.*;
+import org.apache.cordova.utils.MyUtils;
+
+public class MainActivity extends CordovaActivity {
+    private static String TAG = MainActivity.class.getSimpleName();
+
+    private TakePhotoCallBack takePhotoCallBack;
+
+    public void setTakePhotoCallBack(TakePhotoCallBack takePhotoCallBack) {
+        this.takePhotoCallBack = takePhotoCallBack;
+    }
+
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // enable Cordova apps to be started in the background
@@ -34,8 +46,23 @@ public class MainActivity extends CordovaActivity
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
-
+        registerCallBack();
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
+    }
+
+    private void registerCallBack() {
+        if (takePhotoCallBack == null) {
+            MyUtils myUtils = new MyUtils();
+            setTakePhotoCallBack(myUtils);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        Log.e("lyl", "onActivityResult: MainActivity");
+
+        takePhotoCallBack.photoCallBack(requestCode, resultCode, intent);
+        super.onActivityResult(requestCode, resultCode, intent);
     }
 }

@@ -38,21 +38,18 @@ public class Geolocation extends CordovaPlugin {
     String TAG = "GeolocationPlugin";
     CallbackContext context;
 
-    String [] permissions = { Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION };
+    String[] permissions = {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION};
 
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         LOG.d(TAG, "We are entering execute");
         context = callbackContext;
-        if(action.equals("getPermission"))
-        {
-            if(hasPermisssion())
-            {
+        if (action.equals("getPermission")) {
+            if (hasPermisssion()) {
                 PluginResult r = new PluginResult(PluginResult.Status.OK);
                 context.sendPluginResult(r);
                 return true;
-            }
-            else {
+            } else {
                 PermissionHelper.requestPermissions(this, 0, permissions);
             }
             return true;
@@ -62,11 +59,10 @@ public class Geolocation extends CordovaPlugin {
 
 
     public void onRequestPermissionResult(int requestCode, String[] permissions,
-                                          int[] grantResults) throws JSONException
-    {
+                                          int[] grantResults) throws JSONException {
         PluginResult result;
         //This is important if we're using Cordova without using Cordova, but we have the geolocation plugin installed
-        if(context != null) {
+        if (context != null) {
             for (int r : grantResults) {
                 if (r == PackageManager.PERMISSION_DENIED) {
                     LOG.d(TAG, "Permission Denied!");
@@ -82,10 +78,8 @@ public class Geolocation extends CordovaPlugin {
     }
 
     public boolean hasPermisssion() {
-        for(String p : permissions)
-        {
-            if(!PermissionHelper.hasPermission(this, p))
-            {
+        for (String p : permissions) {
+            if (!PermissionHelper.hasPermission(this, p)) {
                 return false;
             }
         }
@@ -97,11 +91,9 @@ public class Geolocation extends CordovaPlugin {
      * the parent class, since we can't initialize it reliably in the constructor!
      */
 
-    public void requestPermissions(int requestCode)
-    {
+    public void requestPermissions(int requestCode) {
         PermissionHelper.requestPermissions(this, requestCode, permissions);
     }
-
 
 
 }

@@ -28,6 +28,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.provider.Settings;
 
 public class Device extends CordovaPlugin {
@@ -45,6 +48,10 @@ public class Device extends CordovaPlugin {
      */
     public Device() {
     }
+
+
+
+
 
     /**
      * Sets the context of the Command. This can then be used to do things like

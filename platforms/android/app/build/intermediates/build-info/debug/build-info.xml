@@ -5,35 +5,36 @@
     build-mode="COLD"
     density="420dpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.0.0"
-    timestamp="1535644488680"
+    timestamp="1535708905888"
     token="4763609144182095865"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="169" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="22" />
     <task
         name="verifier"
-        duration="0" />
+        duration="5" />
 
+    <artifact
+        location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
     <artifact
         location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
         type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1535630970282"
+        timestamp="1535676703849"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
         <artifact
             location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
@@ -42,6 +43,9 @@
             type="SPLIT" />
         <artifact
             location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
@@ -70,17 +74,57 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1535641052657"
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1535681602233"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1535644488680"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1535682486101"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_DELETED"
+        timestamp="1535706227728"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1535708568202"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1535708875513"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1535708905888"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
         <artifact
             location="D:\MyAndroidStudioSpace\cordova\Hello\platforms\android\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />

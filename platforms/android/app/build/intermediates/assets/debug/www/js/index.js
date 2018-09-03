@@ -56,11 +56,11 @@ var app = {
 
         },
 
-        testClick:function () {
+        testClick: function () {
             var testClick = this.$$("next_page");
-            testClick.onclick=function () {
-                alert("next_page")
-                window.location.href="utils_page.html"
+            testClick.onclick = function () {
+                // alert("next_page")
+                window.location.href = "utils_page.html"
             }
         },
 
@@ -76,7 +76,11 @@ var app = {
                         "Device platform: " + device.platform + "\n" +
                         "Device UUID: " + device.uuid + "\n" +
                         "Device version: " + device.version + "\n" +
-                        "MAC地址:" + macAddress)
+                        "Device serial: " + device.serial + "\n" +
+                        "Device isVirtual: " + device.isVirtual + "\n" +
+                        "Device manufacturer: " + device.manufacturer + "\n" +
+                        "MAC地址:" + macAddress
+                    )
                 }
 
                 function onFail(fail) {
@@ -305,7 +309,6 @@ var app = {
         }
     }
 ;
-
 
 
 function utils_page() {
