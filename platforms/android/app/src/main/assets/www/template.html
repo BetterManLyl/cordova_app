@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="">
+    <title>测试H5调用原生功能</title>
+    <style>
+        .button {
+            width: 50%;
+            height: 80px;
+            margin-top: 10px;
+            float: left;
+        }
+    </style>
+
+    <script>
+        function callAndroid() {
+            alert('111');
+            //  test.hello("JS调用了Android的hello方法")
+        }
+
+        //获取终端设备静态信息
+        function getMachineStaticInfo() {
+            var result = android.getMachineStaticInfo();
+            // alert(result);
+            console.log(result);
+            document.getElementById("p").innerHTML = result;
+
+        }
+
+        //获取终端设备动态信息
+        function getMachineDynamicInfo() {
+            var result = android.getMachineDynamicInfo();
+            // alert(result);
+            console.log(result);
+            document.getElementById("p").innerHTML = result;
+        }
+
+        //拍照
+        function takephoto() {
+            android.takephoto();
+        }
+
+        //获取SIM卡发卡器基础信息
+        function getSIMCardInfo() {
+            var result = android.getSIMCardInfo();
+            document.getElementById("p").innerHTML = result;
+        }
+
+
+        //写卡
+        function writeSIMCard() {
+            var json = {"issueData": "你好，我是js"};
+            var result = android.writeSIMCard(JSON.stringify(json));
+            document.getElementById("p").innerHTML = result;
+        }
+
+        function callJS() {
+            alert("Android调用了JS的callJS方法");
+        }
+
+        //下一页
+        function nextpage() {
+            window.location.href = "test.html"
+        }
+
+        //读身份证
+        function readIDCard() {
+            var timeOuts = document.getElementById("textId").value  //textId为文本框的id；
+            if (timeOuts == "") {
+                timeOuts = 20;
+            }
+            var timeOut = {"timeOut": timeOuts};
+            console.log(timeOut)
+            window.android.readIDCard(JSON.stringify(timeOut));
+        }
+
+
+        //出卡
+        function popSIMCard() {
+            var result = android.popSIMCard();
+            document.getElementById("p").innerHTML = result;
+
+        }
+
+        //打印凭据
+        function printTicket() {
+            var json = {"customer_name": "lyl", "phoneNumber": "18326597923"}
+            android.printTicket(JSON.stringify(json));
+
+
+        }
+
+        //健康巡检
+        function checkMachine() {
+            var result = android.checkMachine();
+            document.getElementById("p").innerHTML = result;
+
+        }
+
+        //拍照返回结果
+        function cameraResult(result) {
+            var base64Image = result.photoBaseCode;
+            var returnCode = result.returnCode;
+            var returnMsg = result.returnMsg;
+            document.getElementById("myImage").src = base64Image;
+            document.getElementById("p").innerHTML = JSON.stringify(result);
+        }
+
+        //读身份证返回结果
+        function readCardResult(result) {
+            document.getElementById("p").innerHTML = result;
+        }
+
+        //显示导航栏
+        function showNavigator() {
+            window.android.showNavigationBar();
+        }
+
+        //隐藏导航栏
+        function hideNavigator() {
+            window.android.hideNavigationBar();
+        }
+
+        //跳转拍照
+        function skipCamera() {
+            android.skipCamera();
+        }
+
+        //打印返回结果
+        function printResult(result) {
+            document.getElementById("p").innerHTML = result;
+        }
+
+    </script>
+</head>
+<body>
+
+<div>
+    <img id="myImage" style="width: 200px;height: 200px;" src="">
+
+
+    <input style=" height: 30px;width: 200px" type="number" placeholder="请输入身份证读卡器超时时间" id="textId">
+</div>
+
+
+<div id="deviceready">
+    <div style="margin-top: 10px">
+        <button id="readIDCard" onclick="readIDCard()" class="button">二代身份证读卡器</button>
+        <button id="takePhoto" onclick="takephoto()" class="button">摄像头唤醒</button>
+        <button id="closeCamera" onclick="" class="button">摄像头关闭</button>
+        <button id="getSIMCardInfo" onclick="getSIMCardInfo()" class="button">发卡机状态</button>
+        <button id="writeSIMCard" onclick="writeSIMCard()" class="button">写SIM卡</button>
+        <button id="popSIMCard" onclick="popSIMCard()" class="button">SIM卡出卡</button>
+        <button id="printTicket" onclick="printTicket()" class="button">凭据打印</button>
+        <button id="checkMachine" onclick="checkMachine()" class="button">健康巡检</button>
+        <button id="getMachineStaticInfo" onclick="getMachineStaticInfo()" class="button">获取终端设备静态信息</button>
+        <button id="getMachineDynamicInfo" onclick="getMachineDynamicInfo()" class="button">获取终端设备动态信息</button>
+        <button id="show_navigator" onclick="showNavigator()" class="button">显示导航栏</button>
+        <button id="hide_navigator" onclick="hideNavigator()" class="button">隐藏导航栏</button>
+        <button id="skip_camera" onclick="skipCamera()" class="button">跳转到拍照页面</button>
+        <button id="next_page" onclick="nextpage()" class="button">下一页</button>
+
+
+    </div>
+    <div style="clear: both">
+        <p id="p" style="height:70px;word-break: normal;white-space: pre-wrap;word-wrap: break-word"></p>
+
+    </div>
+</div>
+</body>
+</html>

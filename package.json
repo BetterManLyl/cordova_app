@@ -23,7 +23,8 @@
     "cordova-plugin-network-information": "^2.0.1",
     "cordova-plugin-whitelist": "^1.3.3",
     "toast-plugin": "file:../../../plugins/toast-plugin",
-    "util-plugin": "file:../../../plugins/util-plugin"
+    "util-plugin": "file:../../../plugins/util-plugin",
+    "whatwg-fetch": "^3.0.0"
   },
   "cordova": {
     "plugins": {

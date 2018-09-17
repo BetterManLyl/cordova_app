@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>Title</title>
+
+    <script type="text/javascript" src="js/utils_page.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <style>
+        .button {
+            width: 50%;
+            height: 80px;
+            margin-top: 10px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <img id="myImage" style="width: 200px;height: 200px;" src="">
+</div>
+
+
+<div id="deviceready">
+    <div style="margin-top: 10px">
+        <button id="readIDCard" class="button">二代身份证读卡器</button>
+        <button id="takePhoto" class="button">摄像头唤醒</button>
+        <button id="closeCamera" class="button">摄像头关闭</button>
+        <button id="getSIMCardInfo" class="button">发卡机状态</button>
+        <button id="writeSIMCard" class="button">写SIM卡</button>
+        <button id="popSIMCard" class="button">SIM卡出卡</button>
+        <button id="printTicket" class="button">凭据打印</button>
+        <button id="checkMachine" class="button">健康巡检</button>
+        <button id="getITermInfo" class="button">获取终端设备信息</button>
+    </div>
+
+</div>
+</body>
+</html>
